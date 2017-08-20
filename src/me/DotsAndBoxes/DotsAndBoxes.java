@@ -1,22 +1,23 @@
 package me.DotsAndBoxes;
 
 import javax.swing.JFrame;
-
 import me.DotsAndBoxes.Grid.Dots;
 import me.DotsAndBoxes.Grid.Grid;
 
 public class DotsAndBoxes {
 	private JFrame jFrame;
 	private DotsAndBoxesPanel dotsAndBoxesPanel;
-	private Grid grid;
-
+	public static Grid grid;
+	/**
+	 * Main constructor of the project
+	 */
 	public DotsAndBoxes() {
 		/*
 		 * Create objects for the classes
 		 */
 		jFrame = new JFrame();
+		grid = new Grid(75, 10, 10);
 		dotsAndBoxesPanel = new DotsAndBoxesPanel();
-		grid = new Grid(50, 10, 10);
 		Dots.loadDots(grid);
 		/*
 		 * Setup the JFrame
@@ -27,8 +28,13 @@ public class DotsAndBoxes {
 		jFrame.setResizable(false);
 		jFrame.setDefaultCloseOperation(3);
 		jFrame.setVisible(true);
+		jFrame.addMouseListener(dotsAndBoxesPanel);
+		jFrame.addMouseMotionListener(dotsAndBoxesPanel);
 	}
-
+	/**
+	 * Main method
+	 * @param args
+	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		DotsAndBoxes dotsAndBoxes = new DotsAndBoxes();

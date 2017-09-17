@@ -6,6 +6,7 @@ public class Dots {
 	public static ArrayList<Dots> dots = new ArrayList<Dots>();
 	private int x;
 	private int y;
+	private boolean claimed;
 	/*
 	 * Is this dot connected to anything
 	 */
@@ -88,4 +89,12 @@ public class Dots {
 	public void setClaimedCompletely(boolean isClaimedCompletely) {
 		this.isClaimedCompletely = isClaimedCompletely;
 	}
+	public boolean isClaimed() {
+		return claimed;
+	}
+	public void setClaimed(boolean claimed) {
+		this.claimed = claimed;
+	}
+
+	
 }

@@ -1,6 +1,8 @@
 package me.DotsAndBoxes;
 
 import javax.swing.JFrame;
+
+import me.DotsAndBoxes.Grid.Connection;
 import me.DotsAndBoxes.Grid.Dots;
 import me.DotsAndBoxes.Grid.Grid;
 
@@ -30,6 +32,10 @@ public class DotsAndBoxes {
 		jFrame.setVisible(true);
 		jFrame.addMouseListener(dotsAndBoxesPanel);
 		jFrame.addMouseMotionListener(dotsAndBoxesPanel);
+		/*
+		 * Add default player boolean
+		 */
+		Connection.setDefaultPlayer();
 	}
 	/**
 	 * Main method
